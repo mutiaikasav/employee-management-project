@@ -1,0 +1,42 @@
+<fieldset class="uk-fieldset">
+    <legend class="uk-legend">Detail Employee</legend>
+
+    <div class="uk-margin">
+        <mat-label>First Name</mat-label>
+        <input class="uk-input" type="text" [(ngModel)]="employee.firstName" readonly="readonly"> 
+    </div>
+
+    <div class="uk-margin">
+        <mat-label>Last Name</mat-label>
+        <input class="uk-input" type="text" [(ngModel)]="employee.lastName" readonly="readonly">
+    </div>
+
+    <div class="uk-margin">
+        <mat-label>Username</mat-label>
+        <input class="uk-input" type="text" [(ngModel)]="employee.username" readonly="readonly">
+    </div>
+
+    <div class="uk-margin">
+        <mat-label>Email</mat-label>
+        <input class="uk-input" type="text" [(ngModel)]="employee.email" readonly="readonly">
+    </div>
+
+    <div class="uk-margin">
+        <mat-label>Birth Date</mat-label>
+        <input class="uk-input" type="text" [(ngModel)]="employee.birthDate" readonly="readonly">
+    </div>
+
+    <div class="uk-margin">
+        <mat-label>Basic Salary</mat-label>
+        <input class="uk-input" type="text" value={{formatSalary(employee.basicSalary)}} readonly="readonly">
+    </div>
+    <div class="uk-margin">
+        <mat-label>Status</mat-label>
+        <input class="uk-input" type="text" [(ngModel)]="employee.status" readonly="readonly">
+    </div>
+    <div class="uk-margin">
+        <mat-label>Group</mat-label>
+        <input class="uk-input" type="text" [(ngModel)]="employee.group" readonly="readonly">
+    </div>
+</fieldset>
+<button mat-raised-button color="primary" routerLink="/employee/list">OK</button>

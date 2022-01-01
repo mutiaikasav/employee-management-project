@@ -1,0 +1,74 @@
+<form [formGroup]="formValue">
+    <fieldset class="uk-fieldset">
+        <legend class="uk-legend">Add Employee</legend>
+
+        <div class="form-group uk-margin example-container">
+            <mat-label>First Name</mat-label>
+            <input class="uk-input" type="text" formControlName="firstName" placeholder="First Name" required>
+        </div>
+
+        <div class="form-group uk-margin example-container">
+            <mat-label>Last Name</mat-label>
+            <input class="uk-input" type="text" formControlName="lastName" placeholder="Last Name" required>
+        </div>
+
+        <div class="form-group uk-margin example-container">
+            <mat-label>Username</mat-label>
+            <input class="uk-input" type="text" formControlName="username" placeholder="Username" required>
+        </div>
+
+        <div class="form-group uk-margin example-container">
+            <mat-label>Email</mat-label>
+            <input class="uk-input" type="email" formControlName="email" aria-describedby="emailHelp" placeholder="Email" required>
+        </div>
+
+        <div class="form-group uk-margin example-container">
+            <mat-label>Birth Date</mat-label>
+        </div>
+        <div class="form-group uk-margin example-container">
+            <mat-form-field ng-controller="AppCtrl as ctrl" appearance="fill">
+                <mat-label>Choose a date</mat-label>
+                <input formControlName="birthDate" matInput [matDatepicker]="picker" [max]="maxDate">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker md-max-date="ctrl.maxDate" #picker></mat-datepicker>
+              </mat-form-field>
+        </div>
+
+        <div class="form-group uk-margin example-container">
+            <mat-label>Basic Salary</mat-label>
+        </div>
+        <div class="form-group uk-margin example-container">
+            <mat-form-field appearance="fill" floatLabel="always">
+                <input matInput type="number" formControlName="basicSalary" class="example-right-align" placeholder="xx.xxx" required>
+                <span matPrefix>Rp&nbsp;</span>
+                <span matSuffix>.00</span>
+              </mat-form-field>
+        </div>
+        <div class="form-group uk-margin example-container">
+            <mat-label>Status</mat-label>
+            <input class="uk-input" type="text" formControlName="status" placeholder="Status" required>
+        </div>
+        <div class="form-group uk-margin example-container">
+            <mat-label>Group</mat-label>
+        </div>
+        <div class="form-group uk-margin example-container">
+            <!-- <ng-select2 [data]="exampleData" formControlName="group">
+            </ng-select2> -->
+            <mat-select formControlName="group">
+                <mat-option value="Group 1">Group 1</mat-option>
+                <mat-option value="Group 2">Group 2</mat-option>
+                <mat-option value="Group 3">Group 3</mat-option>
+                <mat-option value="Group 4">Group 4</mat-option>
+                <mat-option value="Group 5">Group 5</mat-option>
+                <mat-option value="Group 6">Group 6</mat-option>
+                <mat-option value="Group 7">Group 7</mat-option>
+                <mat-option value="Group 8">Group 8</mat-option>
+                <mat-option value="Group 9">Group 9</mat-option>
+                <mat-option value="Group 10">Group 10</mat-option>
+            </mat-select>
+        </div>
+    </fieldset>
+    
+    <button mat-raised-button routerLink="/employee/list">Cancel</button>
+    <button mat-raised-button color="primary" (click)="postEmployeeDetails()">Save</button>
+</form>
